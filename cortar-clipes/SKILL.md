@@ -83,4 +83,4 @@ python "SKILL_DIR/scripts/cortar.py" NOME-DA-PASTA [--layout desfocado|quadrado|
 2. Abra `NOME-DA-PASTA/clipes/painel.jpg` (um quadro de cada clipe lado a lado) pra visão geral.
 3. Entregue: a pasta `clipes/`, a tabela final dos clipes (com o que você ajustou na conferência) e o lembrete: assistir cada um antes de postar, e postar com o crédito do `.txt`.
 
-Nada é postado nem enviado por esta skill. A única conexão com a internet é o download do link que a pessoa passou.
+Nada é postado nem enviado por esta skill. A internet só é usada pra baixar o link que a pessoa passou e, no primeiro uso, o modelo de transcrição (uma vez só).

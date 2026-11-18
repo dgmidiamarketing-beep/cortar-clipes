@@ -50,6 +50,16 @@ LAYOUTS = {
 }
 
 
+def saida_utf8():
+    """No Windows o terminal do Claude Code costuma ser cp1252: sem isto, título com
+    emoji ou letra de outro alfabeto derruba o script no print."""
+    for fluxo in (sys.stdout, sys.stderr):
+        try:
+            fluxo.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
+
 def curto(caminho):
     """Caminho relativo à pasta atual (não mostra a pasta do usuário no terminal)."""
     try:
@@ -282,6 +292,7 @@ def quadros_do_clipe(mp4, destino, n=5):
 
 
 def main():
+    saida_utf8()
     ap = argparse.ArgumentParser(description="Corta os momentos escolhidos em clipes verticais com legenda.")
     ap.add_argument("pasta", help="pasta criada pelo analisar.py (com momentos.json)")
     ap.add_argument("--momentos", default=None, help="outro arquivo de momentos (padrão: <pasta>/momentos.json)")
@@ -358,10 +369,10 @@ def main():
         txt = [f"TÍTULO: {titulo}", ""]
         txt.append("LEGENDA DO POST:")
         txt.append((clipe.get("legenda_post") or titulo).strip())
-        if fonte.get("canal"):
+        credito_post = (momentos.get("credito") if isinstance(momentos, dict) else None) or fonte.get("canal")
+        if credito_post:
             txt.append("")
-            txt.append(f"Créditos: {momentos.get('credito') if isinstance(momentos, dict) and momentos.get('credito') else fonte['canal']}"
-                       + (f" · {fonte['link']}" if fonte.get("link") else ""))
+            txt.append(f"Créditos: {credito_post}" + (f" · {fonte['link']}" if fonte.get("link") else ""))
         if tags:
             txt.append("")
             txt.append(" ".join(tags))

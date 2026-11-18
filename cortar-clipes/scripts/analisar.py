@@ -16,8 +16,8 @@ Uso:
   python analisar.py gravacao.mp4 --idioma pt
   python analisar.py "https://www.twitch.tv/videos/..." --trecho 1:00:00-1:30:00
 
-Nada é enviado pra fora: o único acesso à internet é o download do link
-que você passou (feito pelo yt-dlp).
+Nada é enviado pra fora: a internet só é usada pra baixar o link que você
+passou (pelo yt-dlp) e, no 1º uso, o modelo de transcrição (uma vez só).
 """
 import argparse
 import json
@@ -45,6 +45,16 @@ PALAVRAS_REACAO = [
     # espanhol
     "dios mío", "dios mio", "madre mía", "no puede ser", "vamos", "corre",
 ]
+
+
+def saida_utf8():
+    """No Windows o terminal do Claude Code costuma ser cp1252: sem isto, título com
+    emoji ou letra de outro alfabeto derruba o script no print."""
+    for fluxo in (sys.stdout, sys.stderr):
+        try:
+            fluxo.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
 
 
 def curto(caminho):
@@ -371,6 +381,7 @@ def escrever_resumo(pasta, fonte, frases, energia, cands, deslocamento, idioma, 
 
 
 def main():
+    saida_utf8()
     ap = argparse.ArgumentParser(description="Analisa um vídeo longo pra achar os melhores momentos.")
     ap.add_argument("entrada", help="link (YouTube, Twitch VOD, Kick...) ou caminho do arquivo de vídeo")
     ap.add_argument("--saida", default=None, help="pasta de saída (padrão: clipes-<nome>)")

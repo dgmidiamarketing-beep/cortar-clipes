@@ -130,7 +130,8 @@ meus-clipes/
     ├── 01-ele-nao-viu-o-caminhao.mp4
     ├── 01-ele-nao-viu-o-caminhao.txt
     ├── ...
-    └── painel.jpg         um quadro de cada clipe, lado a lado
+    ├── painel.jpg         um quadro de cada clipe, lado a lado
+    └── conferir/          5 quadros de cada clipe, pro Claude conferir a imagem
 ```
 
 ---
@@ -151,7 +152,7 @@ Clipar streamer é o jeito mais rápido de crescer um perfil de cortes. Só faz 
 ## 07 / Por que é seguro
 
 - **Sem instalador, sem app, sem servidor.** São 2 scripts de Python (`analisar.py` e `cortar.py`) e um `SKILL.md`. Dá pra abrir e ler tudo antes de usar.
-- **Nada sai do seu computador.** A transcrição roda no seu PC. A única conexão é o download do link que você passou (pelo yt-dlp).
+- **Nada sai do seu computador.** A transcrição roda no seu PC. A internet só é usada pra baixar o link que você passou (pelo yt-dlp) e, no primeiro uso, o modelo de transcrição (uma vez só).
 - **Sem conta, chave ou API paga.** O "cérebro" é o próprio Claude Code que você já usa.
 - **Não posta, não envia, não apaga.** Só cria arquivos na pasta de saída.
 

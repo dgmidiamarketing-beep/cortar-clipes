@@ -6,10 +6,10 @@
 
 # Cortar clipes
 
-**Uma Skill pro Claude Code que transforma uma live gravada ou um vídeo longo em clipes em pé, com legenda.**<br>
+**Uma Skill pro Claude Code (e pro Codex, de quem usa ChatGPT) que transforma uma live gravada ou um vídeo longo em clipes em pé, com legenda.**<br>
 Você cola o link, o Claude acha os melhores momentos e o seu PC corta em 9:16, com legenda palavra por palavra, título, hashtags e crédito.
 
-Claude Code · Windows, Mac e Linux · grátis · roda no seu computador
+Claude Code ou Codex · Windows, Mac e Linux · grátis · roda no seu computador
 
 **[↓ BAIXAR A SKILL](cortar-clipes.zip)** · **[→ O QUE PRECISA](#01--o-que-precisa)** · **[→ COMO USAR](#03--usar)** · **[↗ @DANIELMOURAO.IA](https://www.tiktok.com/@danielmourao.ia)**
 
@@ -35,7 +35,7 @@ Claude Code · Windows, Mac e Linux · grátis · roda no seu computador
 
 | | Como conferir | Como instalar |
 |---|---|---|
-| **Claude Code** | `claude --version` | [claude.com/claude-code](https://claude.com/claude-code) |
+| **Claude Code** ou **Codex** | `claude --version` ou `codex --version` | [claude.com/claude-code](https://claude.com/claude-code) · [developers.openai.com/codex](https://developers.openai.com/codex) |
 | **Python 3.10 ou mais novo** | `python --version` | [python.org](https://www.python.org/downloads/) |
 | **ffmpeg** | `ffmpeg -version` | Windows `winget install Gyan.FFmpeg` · Mac `brew install ffmpeg` · Linux `sudo apt install ffmpeg` |
 | **faster-whisper e yt-dlp** | `python -c "import faster_whisper, yt_dlp"` | `pip install faster-whisper yt-dlp` |
@@ -59,7 +59,9 @@ Baixa o [`cortar-clipes.zip`](cortar-clipes.zip), descompacta e coloca a pasta `
 
 No Windows, `~` é a sua pasta de usuário (`C:\Users\SEU-NOME`). Abre o Claude Code de novo e pronto.
 
-> **E no claude.ai?** Não. A Skill precisa baixar o vídeo e rodar o ffmpeg no seu computador, e isso só o Claude Code faz.
+> **Usa ChatGPT?** A Skill segue o mesmo formato que o **Codex** (o agente do ChatGPT pro computador) lê: coloca a pasta em `~/.codex/skills/cortar-clipes/` e abre o Codex de novo. Nós testamos no Claude Code; se algo diferir no Codex, abre uma issue.
+
+> **E no claude.ai ou no ChatGPT do site?** Não. A Skill precisa baixar o vídeo e rodar o ffmpeg no seu computador, e isso só o Claude Code ou o Codex fazem.
 
 ---
 

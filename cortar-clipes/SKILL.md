@@ -5,7 +5,7 @@ description: Corta os melhores momentos de um vídeo longo (live gravada, VOD da
 
 # Cortar clipes
 
-Objetivo: de um link (ou arquivo) de vídeo longo, entregar de 3 a 8 clipes verticais prontos pra revisar e postar, cada um com um `.txt` de título, legenda, hashtags e crédito. Você (Claude) é quem escolhe os momentos. Os scripts só baixam, transcrevem, medem o volume e cortam.
+Objetivo: de um link (ou arquivo) de vídeo longo, entregar de 3 a 8 clipes verticais prontos pra revisar e postar, cada um com um `.txt` de título, legenda, hashtags e crédito. Você (o agente: Claude Code ou Codex) é quem escolhe os momentos. Os scripts só baixam, transcrevem, medem o volume e cortam.
 
 Os scripts ficam na pasta `scripts/` ao lado deste arquivo. Abaixo, `SKILL_DIR` é a pasta onde este `SKILL.md` está; use o caminho completo nos comandos.
 
